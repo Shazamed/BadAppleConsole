@@ -6,7 +6,7 @@ import time
 gscale = " .,:;irsXA253hMHGS#9B&@"
 
 
-def rescale(image, height=30):
+def image2ascii(image, height=30):
     (old_width, old_height) = image.size
     aspect_ratio = float(old_width)/float(old_height)
     width = int(aspect_ratio * height * 2)
@@ -20,13 +20,13 @@ def rescale(image, height=30):
     return '\n'.join(new_image)
 
 
-def runner(path):
+def pathfinder(path):
     try:
         image = Image.open(path)
     except Exception:
         print("Unable to find image in", path)
         return
-    image = rescale(image)
+    image = image2ascii(image)
 
     return image
 
@@ -35,8 +35,8 @@ if __name__ == '__main__':
     frames = []
     print("☯The girls are now preparing. Please wait warmly.☯")
     for i in range(0, 6571):
-        path = "./frames/BA" + str(i) + ".jpg"
-        frames.append(runner(path))
+        path = "C:/Users/guang/PycharmProjects/BadApple!!/frames/BA" + str(i) + ".jpg"
+        frames.append(pathfinder(path))
     i = 0
     while i < len(frames) - 1:
         print('\n' + frames[i], end='')
