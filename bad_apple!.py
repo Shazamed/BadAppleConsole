@@ -35,7 +35,7 @@ if __name__ == '__main__':
     frames = []
     print("☯The girls are now preparing. Please wait warmly.☯")
     for i in range(0, 6571):
-        path = "C:/Users/guang/PycharmProjects/BadApple!!/frames/BA" + str(i) + ".jpg"
+        path = "./frames/BA" + str(i) + ".jpg"
         frames.append(pathfinder(path))
     i = 0
     while i < len(frames) - 1:
