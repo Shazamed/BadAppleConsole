@@ -1,0 +1,16 @@
+import cv2
+
+badApple = cv2.VideoCapture('bad_apple.mp4')
+
+
+def extract_frames(video):
+    count = 0
+    success = 1
+    while success:
+        success, frame = video.read()
+        cv2.imwrite("BA%d.jpg" % count, frame)
+        count += 1
+
+
+if __name__ == '__main__':
+    extract_frames(badApple)
